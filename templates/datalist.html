@@ -1,0 +1,221 @@
+{% extends "datalistbase.html" %}
+
+{% block content %}
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Data List</h1>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+        <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-child fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="huge">26</div>
+                                <div>Student Data</div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="change_db" id="student">
+                        <div class="panel-footer">
+                            <span class="pull-left ">View List</span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-down"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="panel panel-green">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-suitcase fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="huge">12</div>
+                                <div>Teacher Data</div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="change_db" id="teacher">
+                        <div class="panel-footer">
+                            <span class="pull-left">View List</span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-down"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="panel panel-yellow">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-book fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="huge">124</div>
+                                <div>Class Data</div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="change_db" id="class">
+                        <div class="panel-footer">
+                            <span class="pull-left">View List</span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-down"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="panel panel-red">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-book fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="huge">124</div>
+                                <div>Parent Data</div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="change_db" id="parent">
+                        <div class="panel-footer">
+                            <span class="pull-left">View List</span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-down"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <div class="row" id="student">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading" id="dataTables-title">
+                        Student Data List
+                    </div>
+                    <!-- /.panel-heading -->
+                    <div class="panel-body" id="dataTables-body">
+                        <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+                            <thead>
+                                <tr>
+                                    <th>Student ID</th>
+                                    <th>Name</th>
+                                    <th>Date of Birth</th>
+                                    <th>Phone Number</th>
+                                    <th>Address</th>
+                                    <th>School</th>
+                                    <th>Grade</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% for data_list in data_lists %}
+                                <tr data-href="/student/{{ data_list[0] }}">
+                                {% for data in data_list %}
+                                    <td>{{ data }}</td>
+                                {% endfor %}
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                        <!-- /.table-responsive -->
+                    </div>
+                    <!-- /.panel-body -->
+                </div>
+                <!-- /.panel -->
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+
+    </div>
+
+    <script>
+    var table;
+
+    $(document).ready(function() {
+        table = $('#dataTables-example').DataTable({
+            responsive: true
+        });
+    });
+
+	$('tr[data-href]').on("click", function(e) {
+		e.preventDefault();
+	    document.location = $(this).data('href');
+	});
+
+	$('th.sorting, th.sorting_acs, th.sorting_desc').on("click", function() {
+	    	$('tr[data-href]').on("click", function(e) {
+	    		e.preventDefault();
+		    document.location = $(this).data('href');
+		});
+	});
+
+    $(function() {
+        $(".change_db").bind("click", function() {
+            $.getJSON("/_change_db", {
+                db_name: this.id,
+            }, function(data) {
+                if (data.db_name == "student") {
+                    var panel_heading_text = "Student Data List";
+                    var new_table_html = '<table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example"><thead><tr><th>Student ID</th><th>Name</th><th>Date of Birth</th><th>Phone Number</th><th>Address</th><th>School</th><th>Grade</th></tr></thead><tbody>';
+                }
+                else if (data.db_name == "teacher") {
+                    var panel_heading_text = "Teacher Data List";
+                    var new_table_html = '<table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example"><thead><tr><th>Teacher ID</th><th>Name</th><th>Date of Birth</th><th>Phone Number</th><th>Address</th></tr></thead><tbody>';
+                }
+                else if (data.db_name == "class") {
+                    var panel_heading_text = "Class Data List";
+                    var new_table_html = '<table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example"><thead><tr><th>Class ID</th><th>Name</th><th>Teacher ID</th><th>Start Date</th><th>End Date</th><th>Start Time</th><th>End Time</th><th>Day of Week</th><th>Book</th><th>Flag</th></tr></thead><tbody>';
+                }
+                else if (data.db_name == "parent") {
+                    var panel_heading_text = "Parent Data List";
+                    var new_table_html = '<table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example"><thead><tr><th>Parent ID</th><th>Name</th><th>Date of Birth</th><th>Phone Number</th><th>Address</th></tr></thead><tbody>';
+                }
+                for (i = 0; i < Object.keys(data.rows).length; i++) {
+                	  if (data.db_name == "student") {
+                	  	var tr_data = "<tr data-href='/student/" + String(data.rows[i][0]) + "'>";
+                	  	console.log(tr_data)
+                	  } else {
+                	  	var tr_data = "<tr>"
+                	  }   
+                    for (j = 0; j < data.rows[i].length; j++) {
+                        tr_data = tr_data + "<td>" + String(data.rows[i][j]) + "</td>";
+                    }
+                    new_table_html = new_table_html + tr_data + "</tr>";
+                }
+                new_table_html = new_table_html + "</tbody></table>";
+
+                table.destroy();
+                $("#dataTables-example").empty();
+                $("#dataTables-title").text(panel_heading_text)
+                $("#dataTables-body").html(new_table_html);
+                $('tr[data-href]').on("click", function(e) {
+		       	  e.preventDefault();
+			      document.location = $(this).data('href');
+			  });
+                $("#dataTables-example").DataTable( {
+                    responsive: true
+                });
+            });
+            return false;
+        });
+    });
+    </script>
+{% endblock %}

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="JongroEDU (Jongro & EINS) based in Qingdao, China: a Chinese and English education institution">
+    <meta name="author" content="Phillip J. Park">
+
+    <title>JongroEDU</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../static/img/favicon.ico" type="image/x-icon">
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../static/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+
+    <!-- MetisMenu CSS -->
+    <link href="../static/vendor/metismenu/dist/metisMenu.min.css" rel="stylesheet">
+
+    <!-- DataTables CSS -->
+    <link href="../static/vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
+
+    <!-- DataTables Responsive CSS -->
+    <link href="../static/vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link href="../static/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+    a {
+        outline: none;
+    }
+
+    .user-row {
+        margin-bottom: 14px;
+    }
+
+    .user-row:last-child {
+        margin-bottom: 0;
+    }
+
+    .dropdown-user {
+        margin: 13px 0;
+        padding: 5px;
+        height: 100%;
+    }
+
+    .dropdown-user:hover {
+        cursor: pointer;
+    }
+
+    .table-user-information > tbody > tr {
+        border-top: 1px solid rgb(221, 221, 221);
+    }
+
+    .table-user-information > tbody > tr:first-child {
+        border-top: 0;
+    }
+
+
+    .table-user-information > tbody > tr > td {
+        border-top: 0;
+    }
+    .toppad
+    {margin-top:20px;
+    }
+    </style>
+
+    <!-- jQuery -->
+    <script src="../static/vendor/jquery/jquery.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Jongro & EINS</a>
+            </div>
+            <!-- /.navbar-header -->
+
+            <ul class="nav navbar-top-links navbar-right">
+                <li>
+                    <a href="#" data-toggle="tooltip" data-placement="bottom" title="Class Management System">
+                        <i class="fa fa-address-book fa-fw"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" data-toggle="tooltip" data-placement="bottom" title="Online Exam Platform">
+                        <i class="fa fa-university fa-fw"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" data-toggle="tooltip" data-placement="bottom" title="Logout">
+                        <i class="fa fa-sign-out fa-fw"></i>
+                    </a>
+                </li>
+            </ul>
+            <!-- /.navbar-top-links -->
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li>
+                            <a href="index.html"><i class="fa fa-database fa-fw"></i> Data List</a>
+                        </li>
+                        <li>
+                            <a href="index.html"><i class="fa fa-users fa-fw"></i> Class Management</a>
+                        </li>
+                        <li>
+                            <a href="index.html"><i class="fa fa-graduation-cap fa-fw"></i> Score Consulting</a>
+                        </li>
+                        <li>
+                            <a href="index.html"><i class="fa fa-pie-chart fa-fw"></i> Business Analytics</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+        <!-- Navigation end -->
+
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">{{ studentname }}</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <div class="row">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                      <h3 class="panel-title">Student Profile</h3>
+                    </div>
+
+                    <div class="panel-body">
+                      <div class="row">
+                        <div class=" col-md-12 col-lg-9 "> 
+                          <table class="table table-user-information">
+                            <tbody>
+                              <tr>
+                                <td>Student ID:</td>
+                                <td>{{ studentid }}</td>
+                              </tr>
+                              <tr>
+                                <td>Date of Birth:</td>
+                                <td>{{ birth }}</td>
+                              </tr>
+                              <tr>
+                                <td>Phone Number:</td>
+                                <td>{{ phone }}</td>
+                              </tr>
+                              <tr>
+                              <tr>
+                                <td>Address:</td>
+                                <td>{{ address }}</td>
+                              </tr>
+                              <tr>
+                                <td>Attending School:</td>
+                                <td>{{ school }}</td>
+                              </tr>
+                              <tr>
+                                <td>Grade:</td>
+                                <td>{{ grade }}</td>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="panel-footer">
+                        <a data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-envelope"></i></a>
+                        <span class="pull-right">
+                            <a href="edit.html" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i></a>
+                            <a data-original-title="Remove this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-remove"></i></a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                Current Enrolled Class</h3>
+                        </div>
+                        <ul class="list-group">
+                            {% for class in class_current %}
+                                <a href="#" class="list-group-item"><b>[{{ class[0] }}]</b>  {{ class[1] }} <small>({{ class[2] }})</small></a>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                Enrolled Class History</h3>
+                        </div>
+                        <ul class="list-group">
+                            {% for class in class_history %}
+                                <a href="#" class="list-group-item"><b>[{{ class[0] }}]</b>  {{ class[1] }} <small>({{ class[2] }})</small></a>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <i class="fa fa-bar-chart-o fa-fw"></i> Test Scores Progress
+                            <div class="pull-right">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                                        TEST
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu pull-right" role="menu">
+                                        <li><a href="#">HSK 4</a>
+                                        </li>
+                                        <li><a href="#">HSK 5</a>
+                                        </li>
+                                        <li><a href="#">HSK 6</a>
+                                        </li>
+                                        <li><a href="#">TOEFL</a>
+                                        </li>
+                                        <li><a href="#">SAT</a>
+                                        </li>
+                                        <li class="divider"></li>
+                                        <li><a href="#">Other tests</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div id="morris-area-chart"></div>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <i class="fa fa-bar-chart-o fa-fw"></i> Subject Specific Progress
+                        </div>
+                        <div class="panel-body">
+                            <div id="morris-donut-chart"></div>
+                            <a href="#" class="btn btn-default btn-block">Edit Settings</a>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+</script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../static/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <script>
+    $(document).ready(function() {
+        var panels = $('.user-infos');
+        var panelsButton = $('.dropdown-user');
+        panels.hide();
+
+        //Click dropdown
+        panelsButton.click(function() {
+            //get data-for attribute
+            var dataFor = $(this).attr('data-for');
+            var idFor = $(dataFor);
+
+            //current button
+            var currentButton = $(this);
+            idFor.slideToggle(400, function() {
+                //Completed slidetoggle
+                if(idFor.is(':visible'))
+                {
+                    currentButton.html('<i class="glyphicon glyphicon-chevron-up text-muted"></i>');
+                }
+                else
+                {
+                    currentButton.html('<i class="glyphicon glyphicon-chevron-down text-muted"></i>');
+                }
+            })
+        });
+
+
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+    </script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="../static/vendor/metismenu/dist/metisMenu.min.js"></script>
+
+    <!-- DataTables JavaScript -->
+    <script src="../static/vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="../static/vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+    <script src="../static/vendor/datatables-responsive/dataTables.responsive.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="../static/js/sb-admin-2.js"></script>
+
+</body>
+</html>

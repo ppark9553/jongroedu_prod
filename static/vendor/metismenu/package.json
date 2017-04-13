@@ -1,0 +1,175 @@
+{
+  "_args": [
+    [
+      "metismenu",
+      "/home/phil/바탕화면/Bootstrap/website/jongroedu"
+    ]
+  ],
+  "_from": "metismenu@latest",
+  "_id": "metismenu@2.6.1",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/metismenu",
+  "_nodeVersion": "7.2.1",
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/metismenu-2.6.1.tgz_1481656304598_0.6832517944276333"
+  },
+  "_npmUser": {
+    "email": "onokumus@gmail.com",
+    "name": "onokumus"
+  },
+  "_npmVersion": "3.10.10",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "metismenu",
+    "raw": "metismenu",
+    "rawSpec": "",
+    "scope": null,
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/metismenu/-/metismenu-2.6.1.tgz",
+  "_shasum": "3cd0f41da39f99d5f2ac95d4bee6d3d8fe3ec274",
+  "_shrinkwrap": null,
+  "_spec": "metismenu",
+  "_where": "/home/phil/바탕화면/Bootstrap/website/jongroedu",
+  "author": {
+    "email": "onokumus@gmail.com",
+    "name": "Osman Nuri Okumuş",
+    "url": "https://github.com/onokumus"
+  },
+  "bugs": {
+    "url": "https://github.com/onokumus/metisMenu/issues"
+  },
+  "contributors": [
+    {
+      "name": "Umut Karcı",
+      "email": "cediddi@gmail.com",
+      "url": "https://github.com/cediddi"
+    },
+    {
+      "name": "Osman Nuri Okumuş",
+      "email": "onokumus@gmail.com",
+      "url": "https://github.com/onokumus"
+    },
+    {
+      "name": "Arthur CHAN",
+      "email": "arthur@talkgoal.com",
+      "url": "http://catchtop.com"
+    },
+    {
+      "name": "Andrew Eastwood",
+      "url": "https://github.com/AndrewEastwood"
+    },
+    {
+      "name": "Marcelo Tosco",
+      "email": "capy.net@gmail.com",
+      "url": "http://ecapy.com"
+    },
+    {
+      "name": "Radoslav Štofko",
+      "url": "http://www.stoweb.cz"
+    },
+    {
+      "name": "Rein de Vries",
+      "email": "info@reinos.nl",
+      "url": "https://github.com/reinos/"
+    },
+    {
+      "name": "Chris Wiggins",
+      "email": "chris@wiggins.nz",
+      "url": "https://github.com/chriswiggins"
+    },
+    {
+      "name": "Jacob Magnusson",
+      "email": "m@jacobian.se",
+      "url": "https://github.com/jmagnusson"
+    },
+    {
+      "name": "QQ",
+      "email": "sinabs@gmail.com",
+      "url": "https://github.com/sinabs"
+    },
+    {
+      "name": "roman",
+      "email": "rgnevashev@gmail.com",
+      "url": "https://github.com/rgnevashev"
+    },
+    {
+      "name": "diegozhu",
+      "email": "zhuhaiyang55@gmail.com",
+      "url": "http://sae.zhuhaiyang.me"
+    }
+  ],
+  "dependencies": {},
+  "description": "A jQuery menu plugin",
+  "devDependencies": {
+    "autoprefixer": "^6.3.6",
+    "babel-cli": "^6.18.0",
+    "babel-eslint": "^6.0.4",
+    "babel-plugin-transform-es2015-modules-umd": "^6.8.0",
+    "babel-preset-latest": "^6.16.0",
+    "cssnano": "^3.6.2",
+    "grunt": "^1.0.1",
+    "grunt-babel": "^6.0.0",
+    "grunt-banner": "^0.6.0",
+    "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-uglify": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-eslint": "^18.1.0",
+    "grunt-postcss": "^0.8.0",
+    "pixrem": "^3.0.2"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "3cd0f41da39f99d5f2ac95d4bee6d3d8fe3ec274",
+    "tarball": "https://registry.npmjs.org/metismenu/-/metismenu-2.6.1.tgz"
+  },
+  "gitHead": "662528114386eb025f3992e41a90c75699bb5926",
+  "homepage": "https://github.com/onokumus/metisMenu#readme",
+  "keywords": [
+    "accordion",
+    "bootstrap",
+    "jquery",
+    "menu",
+    "metis",
+    "metisMenu",
+    "toggle",
+    "twbs",
+    "twitter"
+  ],
+  "license": "MIT",
+  "main": "./dist/metisMenu.js",
+  "maintainers": [
+    {
+      "name": "onokumus",
+      "email": "onokumus@gmail.com"
+    }
+  ],
+  "name": "metismenu",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/onokumus/metisMenu.git"
+  },
+  "scripts": {
+    "js": "babel src -d dist",
+    "test": "grunt travis --verbose"
+  },
+  "verb": {
+    "reflinks": [
+      "twbuttons"
+    ],
+    "run": true,
+    "tasks": [
+      "readme"
+    ],
+    "toc": true
+  },
+  "version": "2.6.1"
+}
