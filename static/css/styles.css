@@ -12,12 +12,6 @@ html {
   height: 100%;
 }
 
-@media (min-width: 1200px){
-	.container {
-		width: 960px;
-	}
-}
-
 h1,
 h2,
 h3,
@@ -117,18 +111,19 @@ a {
   .intro .intro-body {
     display: table-cell;
     vertical-align: middle; }
-    .intro .intro-body .brand-heading {
-      font-size: 40px; }
-    .intro .intro-body .intro-text {
-      font-size: 18px; }
+  .intro .intro-body .brand-heading {
+    font-size: 50px; }
+  .intro .intro-body .intro-text {
+    font-size: 20px; }
   @media (min-width: 1200px) {
     .intro {
       height: 100%;
       padding: 0; }
-      .intro .intro-body .brand-heading {
-        font-size: 60px; }
-      .intro .intro-body .intro-text {
-        font-size: 26px; } }
+    .intro .intro-body .brand-heading {
+      padding-top: 170px;
+      font-size: 50px; }
+    .intro .intro-body .intro-text {
+      font-size: 20px; } }
 
 .ghost-button-semi-transparent {
   background-color: transparent;
@@ -147,7 +142,7 @@ a {
   text-align: center;
   outline: none;
   text-decoration: none;
-  transition: background-color 0.2s ease-out, border-color 0.2s ease-out; }
+  transition: background-color 0.1s ease-out, border-color 0.1s ease-out; }
 
 .ghost-button-semi-transparent:hover,
 .ghost-button-semi-transparent:active {
@@ -156,7 +151,7 @@ a {
   background-color: rgba(255, 255, 255, 0.1);
   border-color: #fff;
   /* fallback */
-  transition: background-color 0.3s ease-in, border-color 0.3s ease-in; }
+  transition: background-color 0.1s ease-in, border-color 0.1s ease-in; }
 
 .btn-circle {
   width: 70px;
@@ -168,9 +163,9 @@ a {
   font-size: 40px;
   color: white;
   background: transparent;
-  -webkit-transition: background .3s ease-in-out;
-  -moz-transition: background .3s ease-in-out;
-  transition: background .3s ease-in-out; }
+  -webkit-transition: background .1s ease-in-out;
+  -moz-transition: background .1s ease-in-out;
+  transition: background .1s ease-in-out; }
   .btn-circle:hover, .btn-circle:focus {
     outline: none;
     color: white;
@@ -183,8 +178,8 @@ a {
   .btn-circle:hover i.animated {
     -webkit-animation-name: pulse;
     -moz-animation-name: pulse;
-    -webkit-animation-duration: 1.5s;
-    -moz-animation-duration: 1.5s;
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
     -webkit-animation-iteration-count: infinite;
     -moz-animation-iteration-count: infinite;
     -webkit-animation-timing-function: linear;
@@ -215,10 +210,7 @@ a {
 .content-section {
   padding-top: 100px; }
 
-.bg-grey {
-  background-color: #f6f6f6; }
-
-.download-section {
+.class-section {
   width: 100%;
   padding: 60px 0;
   color: white;
@@ -271,7 +263,7 @@ a {
 .btn2-default_flipped {
   border: 3px solid white;
   outline: none;
-  color: #323232;
+  color: #c59a6d;
   background-color: white; }
   .btn2-default_flipped:hover, .btn2-default_flipped:focus {
     border: 3px solid white;
@@ -291,7 +283,7 @@ a {
 
 .logo-small {
   color: #5ADFDF;
-  font-size: 50px; }
+  font-size: 33px; }
 
 .slideanim {
   visibility: hidden; }
@@ -339,41 +331,3 @@ ul.banner-social-buttons {
       padding: 0; }
       ul.banner-social-buttons li:last-child {
         margin-bottom: 0; } }
-
-.panel {
-  border: 1px solid #F9565C;
-  border-radius: 0 !important;
-  transition: box-shadow 0.5s; }
-
-.panel:hover {
-  box-shadow: 5px 0px 40px rgba(0, 0, 0, 0.2); }
-
-.panel-footer .btn:hover {
-  border: 1px solid #F9565C;
-  background-color: #fff !important;
-  color: #F9565C; }
-
-.panel-heading {
-  color: #fff !important;
-  background-color: #F9565C !important;
-  padding: 25px;
-  border-bottom: 1px solid transparent;
-  border-top-left-radius: 0px;
-  border-top-right-radius: 0px;
-  border-bottom-left-radius: 0px;
-  border-bottom-right-radius: 0px; }
-
-.panel-footer {
-  background-color: white !important; }
-
-.panel-footer h3 {
-  font-size: 32px; }
-
-.panel-footer h4 {
-  color: #aaa;
-  font-size: 14px; }
-
-.panel-footer .btn {
-  margin: 15px 0;
-  background-color: #F9565C;
-  color: #fff; }
