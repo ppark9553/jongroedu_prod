@@ -12,6 +12,12 @@ html {
   height: 100%;
 }
 
+@media (min-width: 1200px){
+	.container {
+		width: 960px;
+	}
+}
+
 h1,
 h2,
 h3,
@@ -28,7 +34,7 @@ p {
   font-size: 18px;
   font-family: "Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;
   line-height: 1.5; }
-  @media (min-width: 768px) {
+  @media (min-width: 1200px) {
     p {
       margin: 0 0 35px;
       font-size: 20px;
@@ -82,7 +88,7 @@ a {
       background-color: rgba(255, 255, 255, 0.3); }
       .navbar-custom .nav li.active a:hover {
         color: white; }
-  @media (min-width: 768px) {
+  @media (min-width: 1200px) {
     .navbar-custom {
       padding: 20px 0;
       border-bottom: none;
@@ -115,7 +121,7 @@ a {
       font-size: 40px; }
     .intro .intro-body .intro-text {
       font-size: 18px; }
-  @media (min-width: 768px) {
+  @media (min-width: 1200px) {
     .intro {
       height: 100%;
       padding: 0; }
@@ -313,7 +319,7 @@ a {
     opacity: 1;
     -webkit-transform: translateY(0%); } }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1200px) {
   .col-sm-4 {
     text-align: center;
     margin: 25px 0; }
@@ -323,10 +329,10 @@ a {
 
 ul.banner-social-buttons {
   margin-top: 0; }
-  @media (max-width: 1199px) {
+  @media (max-width: 1200px) {
     ul.banner-social-buttons {
       margin-top: 15px; } }
-  @media (max-width: 767px) {
+  @media (max-width: 1200px) {
     ul.banner-social-buttons li {
       display: block;
       margin-bottom: 20px;
