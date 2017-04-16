@@ -112,6 +112,9 @@
                     </div>
                     <!-- /.panel-heading -->
                     <div class="panel-body" id="dataTables-body">
+                        <div id="spinner" class="spinner" style="display:none;">
+                            <img id="img-spinner" src="static/img/ripple.gif" alt="Loading"/>
+                        </div>
                         <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                             <thead>
                                 <tr>
@@ -148,6 +151,16 @@
 
     <script>
     var table;
+
+    $(document).ready(function(){
+      $("#spinner").bind("ajaxSend", function() {
+          $(this).show();
+      }).bind("ajaxStop", function() {
+          $(this).hide();
+      }).bind("ajaxError", function() {
+          $(this).hide();
+      });
+    });
 
     $(document).ready(function() {
         table = $('#dataTables-example').DataTable({
@@ -194,7 +207,7 @@
                 	  	console.log(tr_data)
                 	  } else {
                 	  	var tr_data = "<tr>"
-                	  }   
+                	  }
                     for (j = 0; j < data.rows[i].length; j++) {
                         tr_data = tr_data + "<td>" + String(data.rows[i][j]) + "</td>";
                     }
